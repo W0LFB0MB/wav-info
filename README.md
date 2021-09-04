@@ -18,12 +18,12 @@ npm install wav-info --save
 ```javascript
 var wavInfo = require('wav-info');
 
-wavInfo.infoByFile('./test.wav', function(err, info){
+wavInfo.infoByFile(WAV_FILE_PATH, function(err, info) { // './test.wav', '/audio/test.wav'
   if (err) throw err;
   console.log(info);
 });
 
-wavInfo.infoByBuffer(WAV_FILE_BUFFER, function(err, info){
+wavInfo.infoByBuffer(WAV_FILE_BUFFER, function(err, info) {
   if (err) throw err;
   console.log(info);
 });
