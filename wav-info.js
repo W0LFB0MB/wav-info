@@ -106,4 +106,4 @@ wi.infoByFile = function(buffer, cb) {
     });
 }
 
-module.exports = wf;
+module.exports = wi;
