@@ -91,7 +91,7 @@ wi.infoByBuffer = function(buffer, cb) {
     });
 }
 
-wi.infoByFile = function(buffer, cb) {
+wi.infoByFile = function(filename, cb) {
     const stats = fs.statSync(filename);
     const buffer = new Buffer.alloc(40);  // first 40 bytes are RIFF header
     fs.open(filename, 'r', function(err, fd) {
