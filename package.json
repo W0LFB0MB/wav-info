@@ -1,19 +1,16 @@
 {
   "name": "wav-file-info",
   "version": "0.0.10",
-  "description": "Lightweight Node.js WAV file info helper",
-  "main": "wav-file-info.js",
-  "scripts": {
-    "test": "mocha test"
-  },
+  "description": "Lightweight Node.js WAV file & buffer info helper",
+  "main": "wav-info.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rackfx/Node-WAV-File-Info.git"
+    "url": "https://github.com/W0LFB0MB/wav-info.git"
   },
   "keywords": [
     "WAV",
     "file",
-    "WAV",
+    "buffer",
     "audio",
     "RIFF",
     "Microsoft",
@@ -21,10 +18,9 @@
     "meta",
     "wav meta"
   ],
-  "author": "David Jones <null@rackfx.com> (rackfx.com)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/rackfx/Node-WAV-File-Info/issues"
+    "url": "https://github.com/W0LFB0MB/wav-info/issues"
   },
-  "homepage": "https://github.com/rackfx/Node-WAV-File-Info"
+  "homepage": "https://github.com/W0LFB0MB/wav-info"
 }
