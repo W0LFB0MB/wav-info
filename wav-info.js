@@ -85,15 +85,15 @@ function post_process(read_result, cb, stats) {
 
 
 wi.infoByBuffer = function(buffer, cb) {
-    buffer = buffer.slice(0, 40);
-    return decode_wav(buffer, cb, {
+    const riffHeadBuffer = buffer.slice(0, 40);
+    return decode_wav(riffHeadBuffer, cb, {
         size: buffer.length,
     });
 }
 
 wi.infoByFile = function(buffer, cb) {
-    var stats = fs.statSync(filename);
-    var buffer = new Buffer.alloc(40);  // first 40 bytes are RIFF header
+    const stats = fs.statSync(filename);
+    const buffer = new Buffer.alloc(40);  // first 40 bytes are RIFF header
     fs.open(filename, 'r', function(err, fd) {
         if(err) return cb(err);  // error probably TODO:check this!
         // ex error -
