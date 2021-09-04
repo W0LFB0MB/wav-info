@@ -1,5 +1,5 @@
-# WAV File Info for Node.JS
-#### A lightweight module that parses WAV information data from a wav file into a Javascript Object. Basically retrieves file and header meta data information from a WAV file.  
+# WAV Info for Node.JS
+#### A lightweight module that parses WAV information data from a wav file or buffer containing a fav file into a Javascript Object. Basically retrieves file and header meta data information from a WAV file.  
 
 ### Used for:
 - Determining the validity of a .wav file
@@ -12,13 +12,18 @@
 ### Usage
 
 ```
-npm install wav-file-info --save
+npm install wav-info --save
 ```
 
 ```javascript
-var wavFileInfo = require('wav-file-info');
+var wavInfo = require('wav-info');
 
-wavFileInfo.infoByFilename('./test.wav', function(err, info){
+wavInfo.infoByFile('./test.wav', function(err, info){
+  if (err) throw err;
+  console.log(info);
+});
+
+wavInfo.infoByBuffer(WAV_FILE_BUFFER, function(err, info){
   if (err) throw err;
   console.log(info);
 });
@@ -34,7 +39,7 @@ node wfi.js <filename>
 
 
 
-### Result
+### Result (infoByFile)
 
 ```
 { header:
@@ -70,6 +75,29 @@ node wfi.js <filename>
 }
 ```
 
+### Result (infoByBuffer)
+
+```
+{ header:
+   { riff_head: 'RIFF',
+     chunk_size: 1697504,
+     wave_identifier: 'WAVE',
+     fmt_identifier: 'fmt ',
+     subchunk_size: 16,
+     audio_format: 1,
+     num_channels: 2,
+     sample_rate: 44100,
+     byte_rate: 45328,
+     block_align: 4,
+     bits_per_sample: 16,
+     data_identifier: 'PAD ' },
+  stats:
+   { size: 1697512,
+  },
+  duration: 9.623038548752834
+}
+```
+
 ### Example errors
 
 ```
@@ -82,7 +110,7 @@ node wfi.js <filename>
      'chunk_size does not match file size' ] }
 ```
 
-Duration is in seconds.  Stats come from Node raw fs.statSync() result.
+Duration is in seconds.  Stats on infoByFile come from Node raw fs.statSync() result.
 
 References:
  http://soundfile.sapp.org/doc/WaveFormat/
