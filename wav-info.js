@@ -87,7 +87,7 @@ function post_process(read_result, cb, stats) {
 wi.infoByBuffer = function(buffer, cb) {
     buffer = buffer.slice(0, 40);
     return decode_wav(buffer, cb, {
-        size: buffer.size,
+        size: buffer.length,
     });
 }
 
