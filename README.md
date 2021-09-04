@@ -106,7 +106,7 @@ node wfi.js <filename>
    [ 'Expected "RIFF" string at 0',
      'Expected "WAVE" string at 4',
      'Expected "fmt " string at 8',
-     'Unknwon format: 25711',
+     'Unknown format: 25711',
      'chunk_size does not match file size' ] }
 ```
 
