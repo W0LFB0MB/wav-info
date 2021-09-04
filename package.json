@@ -1,5 +1,5 @@
 {
-  "name": "wav-file-info",
+  "name": "wav-info",
   "version": "0.0.10",
   "description": "Lightweight Node.js WAV file & buffer info helper",
   "main": "wav-info.js",
